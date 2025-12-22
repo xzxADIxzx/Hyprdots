@@ -1,0 +1,59 @@
+#window {
+    font-family: "Comic Sans MS";
+    font-size: 20px;
+
+    color: white;
+    background-color: alpha(#18182E, .32);
+}
+
+#outer-box {
+    padding: 0px;
+    margin: 12px;
+}
+
+#input {
+    margin-top: 1px;
+    margin-bottom: 12px;
+
+    color: white;
+    background-color: alpha(white, .1);
+
+    border: none;
+    border-top:    1px solid alpha(white, .1);
+    border-bottom: 1px solid alpha(black, .1);
+    border-radius: 14px;
+
+    /* the ugly blue border */
+    box-shadow: none;
+}
+
+#input > :nth-child(1) {
+    padding-top: 2px;
+    color: #B2B2B2;
+}
+
+#input > :nth-child(4) {
+    padding-top: 1px;
+    color: #B2B2B2;
+}
+
+#entry:selected {
+    color: transparent;
+    background-color: alpha(white, .16);
+
+    border: none;
+    border-top:    1px solid alpha(white, .1);
+    border-bottom: 1px solid alpha(black, .1);
+    border-radius: 12px;
+
+    /* light the text up */
+    text-shadow: white 0px 0px 4px;
+}
+
+#text {
+    color: #B2B2B2;
+}
+
+#text:selected {
+    color: white;
+}
