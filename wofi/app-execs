@@ -1,0 +1,17 @@
+/usr/bin/google-chrome-stable
+env ELECTRON_OZONE_PLATFORM_HINT= /usr/bin/discord
+/usr/bin/steam
+/usr/bin/parsecd
+/opt/r2modman/r2modman
+olympus
+kitty
+/usr/bin/code
+/usr/bin/github-desktop
+/opt/unityhub/unityhub
+godot-mono
+birdfont
+pwvucontrol
+gnome-calculator
+/usr/bin/google-chrome-stable             --start-fullscreen "https://calendar.google.com"
+/usr/bin/google-chrome-stable --incognito --start-fullscreen "https://translate.google.com/?sl=en&tl=ru"
+/usr/bin/google-chrome-stable --incognito

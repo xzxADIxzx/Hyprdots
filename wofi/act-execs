@@ -1,0 +1,5 @@
+pidof hypridle && killall hypridle || hyprctl dispatch exec hypridle
+hyprlock & systemctl suspend
+hyprlock & systemctl hibernate
+systemctl reboot
+systemctl poweroff
