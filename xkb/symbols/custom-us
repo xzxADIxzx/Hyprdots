@@ -1,0 +1,10 @@
+default partial xkb_symbols "custom" {
+
+    include "us(basic)"
+    name[Group1]= "English (US)";
+
+    key <AD10> {[ p,            P,            Up,    Up    ]};
+    key <AC09> {[ l,            L,            Left,  Left  ]};
+    key <AC10> {[ semicolon,    colon,        Down,  Down  ]};
+    key <AC11> {[ apostrophe,   quotedbl,     Right, Right ]};
+};

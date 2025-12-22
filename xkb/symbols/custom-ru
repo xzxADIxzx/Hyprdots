@@ -1,0 +1,10 @@
+default partial xkb_symbols "custom" {
+
+    include "ru(winkeys)"
+    name[Group1]= "Russian";
+
+    key <AD10> {[ Cyrillic_ze,  Cyrillic_ZE,  Up,    Up    ]};
+    key <AC09> {[ Cyrillic_de,  Cyrillic_DE,  Left,  Left  ]};
+    key <AC10> {[ Cyrillic_zhe, Cyrillic_ZHE, Down,  Down  ]};
+    key <AC11> {[ Cyrillic_e,   Cyrillic_E,   Right, Right ]};
+};
