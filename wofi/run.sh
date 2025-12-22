@@ -16,4 +16,4 @@ path="$2"
 num=$(mod $path-names | $wofi || echo -1)
 cmd=$(sed -n "$(($num + 1))p" $path-execs)
 
-hyprctl dispatch exec $cmd
+hyprctl dispatch exec "$cmd"
