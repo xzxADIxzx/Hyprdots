@@ -1,0 +1,66 @@
+window {
+    font-family: "Comic Sans MS";
+    font-size: 16px;
+
+    color: white;
+    background-color: alpha(#18182E, .32);
+}
+
+.top-bar {
+    color: #E2E2E2;
+    background-color: transparent;
+
+    /* unwanted shadow */
+    box-shadow: none;
+}
+
+.top-bar>*>*>*>*>box {
+    padding: 4px;
+}
+
+.top-bar widget:not(:nth-child(2)) {
+    opacity: 0%;
+}
+
+.top-bar button {
+    border-radius: 14px;
+}
+
+.top-bar button:hover,
+.top-bar button:checked {
+    color: white;
+    background-color: alpha(white, .16);
+
+    border: none;
+    border-top:    1px solid alpha(white, .1);
+    border-bottom: 1px solid alpha(black, .1);
+    border-radius: 14px;
+}
+
+.card {
+    margin-top: 0px;
+
+    color: #E2E2E2;
+    background-color: alpha(white, .1);
+
+    border: none;
+    border-top:    1px solid alpha(white, .1);
+    border-bottom: 1px solid alpha(black, .1);
+    border-radius: 14px;
+}
+
+.history-view {
+    background-color: transparent;
+}
+
+.bit-panel {
+    margin-top: 12px;
+}
+
+.suggested-action {
+    background-color: #55A5F5;
+}
+
+mathconverter textview {
+    color: white;
+}
