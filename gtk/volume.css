@@ -1,0 +1,31 @@
+/* surprisingly, a lot of styles from calculator successfully meet the needs of this application */
+
+dialog-host>*>*>stack .top-bar button {
+    margin: 4px 4px 0px 4px;
+}
+
+dialog-host>*>*>stack stack list {
+    color: #E2E2E2;
+    background-color: alpha(white, .1);
+
+    border: none;
+    border-top:    1px solid alpha(white, .18);
+    border-bottom: 1px solid alpha(black, .1);
+    border-radius: 14px;
+}
+
+dialog-host>*>*>stack stack list row {
+    border: none;
+}
+
+dialog-host>*>*>stack .vumeter {
+    background-color: alpha(white, .11);
+    border: none;
+}
+
+dialog-host>*>*>stack scale slider {
+    margin: -7px;
+
+    background-color: alpha(white, .11);
+    border-radius: 100%;
+}
