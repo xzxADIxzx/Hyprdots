@@ -12,6 +12,6 @@ godot-mono
 birdfont
 pwvucontrol
 gnome-calculator
-/usr/bin/google-chrome-stable             --start-fullscreen "https://calendar.google.com"
-/usr/bin/google-chrome-stable --incognito --start-fullscreen "https://translate.google.com/?sl=en&tl=ru"
-/usr/bin/google-chrome-stable --incognito
+google-chrome-stable             --start-fullscreen --new-window "https://calendar.google.com"
+google-chrome-stable --incognito --start-fullscreen --new-window "https://translate.google.com/?sl=en&tl=ru"
+google-chrome-stable --incognito
