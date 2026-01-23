@@ -10,6 +10,8 @@ function mod
     fi
 }
 
+killall wofi -s KILL
+
 wofi="$1 --define dmenu-print_line_num=true"
 path="$2"
 
