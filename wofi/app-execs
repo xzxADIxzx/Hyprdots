@@ -4,6 +4,7 @@ env ELECTRON_OZONE_PLATFORM_HINT= /usr/bin/discord
 /usr/bin/parsecd
 /opt/r2modman/r2modman
 olympus
+steam steam://rungameid/365670
 obs
 kitty
 /usr/bin/code
