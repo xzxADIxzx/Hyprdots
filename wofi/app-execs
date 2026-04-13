@@ -6,6 +6,7 @@ env ELECTRON_OZONE_PLATFORM_HINT= /usr/bin/discord
 olympus
 steam steam://rungameid/365670
 obs
+reaper
 kitty
 /usr/bin/code
 /usr/bin/github-desktop
