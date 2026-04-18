@@ -1,5 +1,5 @@
 /usr/bin/google-chrome-stable
-env ELECTRON_OZONE_PLATFORM_HINT= /usr/bin/discord
+/usr/bin/discord --enable-features=AcceleratedVideoDecodeLinuxGL,AcceleratedVideoDecodeLinuxZeroCopyGL,VaapiOnNvidiaGPUs
 /usr/bin/steam
 /usr/bin/parsecd
 /opt/r2modman/r2modman
