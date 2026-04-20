@@ -4,10 +4,17 @@ function mod
 {
     if pidof -q hypridle
     then
-        cat $1
+        ic=""
     else
-        sed -e "s/Inhibit/Catalyze/" $1
+        ic="s/Inhibit/Catalyze/"
     fi
+    if mic linked
+    then
+        ul=""
+    else
+        ul="s/Unlink/Link/"
+    fi
+    sed -e "$ic" -e "$ul" $1
 }
 
 killall wofi -s KILL
@@ -15,7 +22,7 @@ killall wofi -s KILL
 wofi="$1 --define dmenu-print_line_num=true"
 path="$2"
 
-num=$(mod $path-names | $wofi || echo -1)
+num=$(mod $path-names | $wofi || echo -42)
 cmd=$(sed -n "$(($num + 1))p" $path-execs)
 
 hyprctl dispatch exec "$cmd"
