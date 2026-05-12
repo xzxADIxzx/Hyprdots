@@ -102,12 +102,14 @@
     // #endregion
     // #region format
 
-    { "key": "ctrl+alt+f",              "command": "editor.action.formatDocument",                                      "when": "editorTextFocus && !editorReadonly" },
+    { "key": "ctrl+alt+f",              "command": "editor.action.formatDocument",                                      "when": "editorTextFocus && !editorReadonly && !editorHasSelection" },
+    { "key": "ctrl+alt+f",              "command": "editor.action.formatSelection",                                     "when": "editorTextFocus && !editorReadonly && editorHasSelection" },
 
     { "key": "ctrl+shift+i",            "command": "-editor.action.formatDocument" },
     { "key": "ctrl+shift+i",            "command": "-editor.action.formatDocument.none" },
     { "key": "shift+alt+f",             "command": "-editor.action.formatDocument" },
     { "key": "shift+alt+f",             "command": "-editor.action.formatDocument.none" },
+    { "key": "ctrl+k ctrl+f",           "command": "-editor.action.formatSelection" },
 
     // #endregion
 ]
