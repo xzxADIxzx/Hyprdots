@@ -1,7 +1,7 @@
 #!/bin/bash
 # region constants
 
-real="alsa_output.usb-C-Media_Electronics_Inc._USB_Audio_Device-00.analog-stereo"
+real="real-mic"
 fake="virtual-mic"
 post="REAPER"
 

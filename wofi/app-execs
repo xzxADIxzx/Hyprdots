@@ -1,5 +1,5 @@
 /usr/bin/google-chrome-stable
-/usr/bin/discord --enable-features=AcceleratedVideoDecodeLinuxGL,AcceleratedVideoDecodeLinuxZeroCopyGL,VaapiOnNvidiaGPUs
+/usr/bin/discord --enable-features=AcceleratedVideoDecodeLinuxGL,AcceleratedVideoDecodeLinuxZeroCopyGL,VaapiOnNvidiaGPUs,WebRTCPipeWireCapturer --disable-features=WebRtcAllowInputVolumeAdjustment
 /usr/bin/steam
 /usr/bin/parsecd
 /opt/r2modman/r2modman
@@ -13,7 +13,9 @@ kitty
 /opt/unityhub/unityhub
 godot-mono
 birdfont
-pwvucontrol
+kitty --hold watch wpctl status
+kitty nmtui
+kitty bluetui
 gnome-calculator
 google-chrome-stable             --start-fullscreen --new-window "https://calendar.google.com"
 google-chrome-stable --incognito --start-fullscreen --new-window "https://translate.google.com/?sl=en&tl=ru"
