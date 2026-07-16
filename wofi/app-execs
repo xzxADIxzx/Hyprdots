@@ -1,4 +1,5 @@
 /usr/bin/google-chrome-stable
+spotify-launcher
 /usr/bin/discord --enable-features=AcceleratedVideoDecodeLinuxGL,AcceleratedVideoDecodeLinuxZeroCopyGL,VaapiOnNvidiaGPUs,WebRTCPipeWireCapturer --disable-features=WebRtcAllowInputVolumeAdjustment
 /usr/bin/steam
 /usr/bin/parsecd
