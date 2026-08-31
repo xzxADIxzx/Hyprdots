@@ -25,4 +25,4 @@ path="$2"
 num=$(mod $path-names | $wofi || echo -42)
 cmd=$(sed -n "$(($num + 1))p" $path-execs)
 
-hyprctl dispatch exec "$cmd"
+hyprctl dispatch "hl.dsp.exec_raw('$cmd')"
