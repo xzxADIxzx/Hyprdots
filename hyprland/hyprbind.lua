@@ -6,7 +6,7 @@ hl.bind("SUPER +         V", hl.dsp.exec_raw(wofi_hist))
 
 hl.bind("SUPER +         R", hl.dsp.exec_raw("kitty"))
 hl.bind("SUPER +         P", hl.dsp.exec_raw("hyprpicker -qraf hex"))
-hl.bind("SUPER +         L", hl.dsp.exec_raw("hyprlock"))
+hl.bind("SUPER +         L", hl.dsp.exec_raw("loginctl lock-session"))
 
 hl.bind("SUPER +         E", hl.dsp.exec_raw(notify_time))
 hl.bind("SUPER + SHIFT + E", hl.dsp.exec_raw(notify_date))
