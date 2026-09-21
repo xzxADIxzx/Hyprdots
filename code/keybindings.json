@@ -3,16 +3,20 @@
 
     { "key": "ctrl+shift+e",            "command": "workbench.view.explorer" },
     { "key": "ctrl+shift+f",            "command": "workbench.view.search" },
+    { "key": "ctrl+shift+g",            "command": "workbench.view.scm" },
+    { "key": "ctrl+shift+h",            "command": "workbench.scm.history.focus" },
     { "key": "ctrl+shift+x",            "command": "workbench.view.extensions" },
-    { "key": "ctrl+shift+d",            "command": "workbench.view.extension.liveshare" },
 
     { "key": "ctrl+shift+e",            "command": "-workbench.view.explorer" },
     { "key": "ctrl+shift+e",            "command": "-workbench.action.quickOpenNavigatePreviousInFilePicker" },
+    { "key": "ctrl+shift+d",            "command": "-workbench.view.debug" },
     { "key": "ctrl+shift+f",            "command": "-workbench.action.findInFiles" },
     { "key": "ctrl+shift+f",            "command": "-workbench.action.terminal.searchWorkspace" },
     { "key": "ctrl+shift+f",            "command": "-workbench.view.search" },
+    { "key": "ctrl+shift+g",            "command": "-workbench.view.scm" },
+    { "key": "ctrl+shift+g",            "command": "-workbench.action.terminal.openDetectedLink" },
+    { "key": "ctrl+shift+h",            "command": "-workbench.action.replaceInFiles" },
     { "key": "ctrl+shift+x",            "command": "-workbench.view.extensions" },
-    { "key": "ctrl+shift+d",            "command": "-workbench.view.debug" },
 
     // #endregion
     // #region drop menus
