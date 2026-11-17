@@ -75,3 +75,18 @@ volume_dec = hl.dsp.exec_raw("wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set
 volume_tgl = hl.dsp.exec_raw("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle")
 
 -- endregion
+-- region configs
+
+hyprpaper =
+[[
+    echo "splash = false" &> /tmp/hyprpaper
+    hyprpaper -c /tmp/hyprpaper &
+
+    until hyprctl hyprpaper wallpaper ", ]] .. root .. [[/backgrounds/cats-sitting.png"
+    do
+        sleep .1
+    done
+]]
+hypridle = [[ hypridle ]]
+
+-- endregion
