@@ -37,6 +37,11 @@ hl.config
         {
             enabled = false,
         },
+
+        glow =
+        {
+            enabled = false,
+        },
     },
 
     misc =
