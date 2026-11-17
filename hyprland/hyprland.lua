@@ -1,6 +1,7 @@
 require("palette")
 require("monitor")
 require("input")
+require("rules")
 require("hyprfeel")
 require("hyprbind")
 
@@ -24,3 +25,5 @@ hl.env("XCURSOR_SIZE", "24")
 hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
 hl.env("LIBVA_DRIVER_NAME", "nvidia")
 hl.env("NVD_BACKEND", "direct")
+
+hl.env("SSH_AUTH_SOCK", "/run/user/1000/gcr/ssh")
