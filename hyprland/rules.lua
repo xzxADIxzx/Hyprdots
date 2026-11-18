@@ -22,7 +22,6 @@ hl.window_rule
     {
         class = "(?i).*chrome.*",
     },
-    immediate = false,
     no_auto_hdr = true,
 })
 
@@ -32,6 +31,5 @@ hl.window_rule
     {
         class = "(?i).*vscode.*",
     },
-    immediate = false,
     no_auto_hdr = true,
 })

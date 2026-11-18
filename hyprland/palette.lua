@@ -11,28 +11,33 @@ dawn = "#FACFDA"
 root = "~/repos/Hyprdots"
 monitor = "external" -- whether the monitor is external (desktop) or internal (laptop)
 microphone = "micro" -- path to the pipewire node of the microphone
+processor = "REAPER" -- path to the pipewire node of the processor
 
 -- endregion
 -- region tools
 
-local wofi = "wofi --dmenu --normal-window --hide-scroll --insensitive --prompt=Search"
-local hist = wofi .. [[ -W 800 -L 6 -r "echo '%s' | cut -f 2 | tr -d '\n' | head -c 80" ]]
+local wofi = [[ wofi --dmenu --normal-window --hide-scroll --insensitive --prompt=Search -W 400 -L 6 ]]
+local hist = [[ wofi --dmenu --normal-window --hide-scroll --insensitive --prompt=Search -W 800 -L 6 -r "echo '%s' | cut -f 2 | tr -d '\n' | head -c 80" ]]
 
-wofi_apps = root .. "/wofi/run.sh '" .. wofi .. " -W 400 -L 6' " .. root .. "/wofi/app"
-wofi_acts = root .. "/wofi/run.sh '" .. wofi .. " -W 400 -L 6' " .. root .. "/wofi/act"
-wofi_hist =
-[[
+wofi_apps = hl.dsp.exec_raw([[ run " ]] .. wofi .. [[ " ]] .. root .. [[/wofi/app ]])
+wofi_acts = hl.dsp.exec_raw([[ run " ]] .. wofi .. [[ " ]] .. root .. [[/wofi/act ]])
+wofi_hist = hl.dsp.exec_raw
+([[
     killall wofi -s KILL
     cliphist list | ]] .. hist .. [[ | cliphist decode | wl-copy
-]]
+]])
 
-format_date = "date +'%A, the %-dxx of %B' | sed 's/11xx/11th/; s/12xx/12th/; s/13xx/13th/; s/1xx/1st/; s/2xx/2nd/; s/3xx/3rd/; s/xx/th/'"
-format_time = "date +'%H:%M'"
-format_both = "date +'%Y-%m-%d %H:%M:%S'"
+term = hl.dsp.exec_raw([[ kitty ]])
+pick = hl.dsp.exec_raw([[ hyprpicker -qraf hex ]])
+lock = hl.dsp.exec_raw([[ loginctl lock-session ]])
 
-notify_date = "hyprctl notify -1 4242 '" .. blue .. "' $(" .. format_date .. ")"
-notify_time = "hyprctl notify -1 4242 '" .. blue .. "' $(" .. format_time .. ")"
-notify_both = "hyprctl notify -1 4242 '" .. blue .. "' $(" .. format_both .. ")"
+format_date = [[ date +"%A, the %-dxx of %B" | sed "s/11xx/11th/; s/12xx/12th/; s/13xx/13th/; s/1xx/1st/; s/2xx/2nd/; s/3xx/3rd/; s/xx/th/" ]]
+format_time = [[ date +"%H:%M" ]]
+format_both = [[ date +"%Y-%m-%d %H:%M:%S" ]]
+
+notify_date = hl.dsp.exec_raw([[ hyprctl notify -1 4242 "]] .. blue .. [[" $( ]] .. format_date .. [[ ) ]])
+notify_time = hl.dsp.exec_raw([[ hyprctl notify -1 4242 "]] .. blue .. [[" $( ]] .. format_time .. [[ ) ]])
+notify_both = hl.dsp.exec_raw([[ hyprctl notify -1 4242 "]] .. blue .. [[" $( ]] .. format_both .. [[ ) ]])
 
 local screenshot =
 [[
@@ -44,8 +49,8 @@ local screenshot =
     grim -g "$rect"
 ]]
 
-screenshot_copy = screenshot:sub(1, -2) .. [[ - | wl-copy ; kill $hpid ]]
-screenshot_save = screenshot:sub(1, -2) .. [[ "screenshots/Screenshot of $( ]] .. format_both .. [[ ).png" ; kill $hpid ]]
+screenshot_copy = hl.dsp.exec_raw(screenshot:sub(1, -2) .. [[ - | wl-copy ; kill $hpid ]])
+screenshot_save = hl.dsp.exec_raw(screenshot:sub(1, -2) .. [[ "screenshots/Screenshot of $( ]] .. format_both .. [[ ).png" ; kill $hpid ]])
 
 local brightness =
 {

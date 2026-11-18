@@ -1,18 +1,18 @@
 -- region general
 
-hl.bind("SUPER +         Q", hl.dsp.exec_raw(wofi_apps))
-hl.bind("SUPER +         M", hl.dsp.exec_raw(wofi_acts))
-hl.bind("SUPER +         V", hl.dsp.exec_raw(wofi_hist))
+hl.bind("SUPER +         Q", wofi_apps)
+hl.bind("SUPER +         M", wofi_acts)
+hl.bind("SUPER +         V", wofi_hist)
 
-hl.bind("SUPER +         R", hl.dsp.exec_raw("kitty"))
-hl.bind("SUPER +         P", hl.dsp.exec_raw("hyprpicker -qraf hex"))
-hl.bind("SUPER +         L", hl.dsp.exec_raw("loginctl lock-session"))
+hl.bind("SUPER +         R", term)
+hl.bind("SUPER +         P", pick)
+hl.bind("SUPER +         L", lock)
 
-hl.bind("SUPER +         E", hl.dsp.exec_raw(notify_time))
-hl.bind("SUPER + SHIFT + E", hl.dsp.exec_raw(notify_date))
+hl.bind("SUPER +         E", notify_time)
+hl.bind("SUPER + SHIFT + E", notify_date)
 
-hl.bind("SUPER         + S", hl.dsp.exec_raw(screenshot_copy))
-hl.bind("SUPER + SHIFT + S", hl.dsp.exec_raw(screenshot_save))
+hl.bind("SUPER         + S", screenshot_copy)
+hl.bind("SUPER + SHIFT + S", screenshot_save)
 
 hl.bind("SUPER +         F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 hl.bind("SUPER +         C", hl.dsp.window.close())
@@ -46,7 +46,7 @@ hl.bind("XF86MonBrightnessDown", brightness_dec, { repeating = true })
 
 hl.bind("XF86AudioRaiseVolume", volume_inc, { repeating = true })
 hl.bind("XF86AudioLowerVolume", volume_dec, { repeating = true })
-hl.bind("XF86AudioMute", volume_tgl)
+hl.bind("XF86AudioMute       ", volume_tgl)
 
 hl.bind("print", hl.dsp.send_shortcut({ mods = "CTRL + SHIFT", key = "M", window = "class:discord" }))
 
