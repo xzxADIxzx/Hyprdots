@@ -1,0 +1,22 @@
+google-chrome-stable
+spotify-launcher
+discord
+steam
+parsecd
+r2modman
+olympus
+obs
+reaper
+steam steam://rungameid/365670
+kitty
+code
+unityhub
+godot-mono
+birdfont
+kitty -o confirm_os_window_close=0 watch -tn 0.5 wpctl status
+kitty -o confirm_os_window_close=0 bluetui
+kitty -o confirm_os_window_close=0 nmtui
+google-chrome-stable             --start-fullscreen --new-window "https://calendar.google.com"
+google-chrome-stable             --start-fullscreen --new-window "https://www.youtube.com"
+google-chrome-stable --incognito --start-fullscreen --new-window "https://translate.google.com/?sl=en&tl=ru"
+google-chrome-stable --incognito

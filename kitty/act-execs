@@ -1,0 +1,6 @@
+[ ! -e /tmp/inhibit ] && touch /tmp/inhibit || rm /tmp/inhibit
+com linked && com unlink || com link
+systemctl suspend
+systemctl hibernate
+systemctl reboot
+systemctl poweroff

@@ -1,6 +1,0 @@
-pidof hypridle && killall hypridle || hyprctl dispatch exec hypridle
-mic linked && mic unlink || mic link
-systemctl suspend
-systemctl hibernate
-systemctl reboot
-systemctl poweroff
