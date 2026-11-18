@@ -1,7 +1,7 @@
 # General information
-These are configuration files that I use on my home machine. \
-Your are free to use any of them as much as you like.
+These are the configuration files I use on my home machine. \
+You are free to use and modify any of them as much as you like.
 
 # System configuration
-I use vanilla Arch Linux, not any sort of derived distro, and as the name suggest, Hyprland as the compositor.
+I run vanilla Arch Linux rather than any sort of derived distro, and as the name suggests, Hyprland as the compositor. \
 While it's likely to work on different configurations, I am not responsible for the outcome.
