@@ -16,16 +16,16 @@ processor = "REAPER" -- path to the pipewire node of the processor
 -- endregion
 -- region tools
 
-local wofi = [[ wofi --dmenu --normal-window --hide-scroll --insensitive --prompt=Search -W 400 -L 6 ]]
-local hist = [[ wofi --dmenu --normal-window --hide-scroll --insensitive --prompt=Search -W 800 -L 6 -r "echo '%s' | cut -f 2 | tr -d '\n' | head -c 80" ]]
+local menu =
+[[
+    pkill -f "^kitty --class menu-$type" && exit 0
+    pkill -f "^kitty --class menu"
+    kitty --class menu-$type --config ]] .. root .. [[/kitty/kitty.conf --config ]] .. root .. [[/kitty/search.conf env quiet=1 search
+]]
 
-wofi_apps = hl.dsp.exec_raw([[ run " ]] .. wofi .. [[ " ]] .. root .. [[/wofi/app ]])
-wofi_acts = hl.dsp.exec_raw([[ run " ]] .. wofi .. [[ " ]] .. root .. [[/wofi/act ]])
-wofi_hist = hl.dsp.exec_raw
-([[
-    killall wofi -s KILL
-    cliphist list | ]] .. hist .. [[ | cliphist decode | wl-copy
-]])
+menu_apps = hl.dsp.exec_raw([[ type="apps" ; ]] .. menu:sub(1, -2) .. [[ -f ]] .. root .. [[/kitty/app ]])
+menu_acts = hl.dsp.exec_raw([[ type="acts" ; ]] .. menu:sub(1, -2) .. [[ -f ]] .. root .. [[/kitty/act ]])
+menu_hist = hl.dsp.exec_raw([[ type="hist" ; ]] .. menu:sub(1, -2) .. [[ -c ]])
 
 term = hl.dsp.exec_raw([[ kitty ]])
 pick = hl.dsp.exec_raw([[ hyprpicker -qraf hex ]])

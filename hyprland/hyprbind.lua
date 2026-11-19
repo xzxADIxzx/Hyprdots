@@ -1,8 +1,8 @@
 -- region general
 
-hl.bind("SUPER +         Q", wofi_apps)
-hl.bind("SUPER +         M", wofi_acts)
-hl.bind("SUPER +         V", wofi_hist)
+hl.bind("SUPER +         Q", menu_apps)
+hl.bind("SUPER +         M", menu_acts)
+hl.bind("SUPER +         V", menu_hist)
 
 hl.bind("SUPER +         R", term)
 hl.bind("SUPER +         P", pick)

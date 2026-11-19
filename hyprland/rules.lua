@@ -2,9 +2,21 @@ hl.window_rule
 ({
     match =
     {
-        class = "(?i).*wofi.*",
+        class = "(?i).*menu.*",
     },
+    float = true,
+    pin = true,
     stay_focused = true,
+    size = "432 180",
+})
+
+hl.window_rule
+({
+    match =
+    {
+        class = "(?i).*menu-hist.*",
+    },
+    size = "1152 180",
 })
 
 hl.window_rule

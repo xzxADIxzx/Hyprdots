@@ -1,14 +1,14 @@
 #!/bin/bash
-# region constants
+# region node
 
-real="real-mic"
 fake="virtual-mic"
-post="REAPER"
+real=$(hyprctl repl microphone)
+post=$(hyprctl repl processor)
 
 # endregion
 # region linked
 
-if echo $1 | grep -q "linked"
+if [[ $1 == linked ]]
 then
     if pw-link -io | grep -q $fake
     then
@@ -21,7 +21,7 @@ fi
 # endregion
 # region unlink
 
-if echo $1 | grep -q "unlink"
+if [[ $1 == unlink ]]
 then
     pactl unload-module module-null-sink
     exit 0
@@ -30,7 +30,7 @@ fi
 # endregion
 # region link
 
-if echo $1 | grep -q "link"
+if [[ $1 == link ]]
 then
     pactl load-module module-null-sink media.class=Audio/Source/Virtual channel_map=mono sink_name=$fake sink_properties=device.description=RPP-Microphone
 
