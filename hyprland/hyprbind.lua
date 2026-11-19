@@ -4,9 +4,10 @@ hl.bind("SUPER +         Q", menu_apps)
 hl.bind("SUPER +         M", menu_acts)
 hl.bind("SUPER +         V", menu_hist)
 
-hl.bind("SUPER +         R", term)
-hl.bind("SUPER +         P", pick)
-hl.bind("SUPER +         L", lock)
+hl.bind("SUPER +         R", common_term)
+hl.bind("SUPER +         P", common_pick)
+hl.bind("SUPER +         D", common_calc)
+hl.bind("SUPER +         L", common_lock)
 
 hl.bind("SUPER +         E", notify_time)
 hl.bind("SUPER + SHIFT + E", notify_date)

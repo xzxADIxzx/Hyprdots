@@ -1,28 +1,29 @@
 #!/bin/bash
-# region constants
-
-r="\033[1;31m"
-g="\033[1;32m"
-n="\033[0;39m"
-
-function faulty
-{
-    echo -e "$r!> $1$n"
-}
+# region logs
 
 function region
 {
-    echo -e "$g=> $1$n"
+    [[ -z $quiet ]] && echo -e "\e[1;32m => $1 \e[0;39m"
+}
+
+function common
+{
+    [[ -z $quiet ]] && echo -e "\e[1;34m << $1 \e[0;39m"
+}
+
+function faulty
+{
+    [[ -z $quiet ]] && echo -e "\e[1;31m !! $1 \e[0;39m"
 }
 
 # endregion
 # region help
 
-if echo $1 | grep -q "h" || [ $# -ne 2 ]
+if [[ $1 == *h* || $# == 0 ]]
 then
-    echo "Simplifies work with AUR, Git and makepkg"
+    echo "Simplifies work with AUR, git and makepkg"
     echo ""
-    echo "Usage: aurman <operations> <repository>"
+    echo "Usage: aurman <operations> [repository]"
     echo "Operations:"
     echo "    -h display this text"
     echo "    -s synchronize repository aka fetch & pull"
@@ -32,15 +33,13 @@ then
 fi
 
 # endregion
-# region check
+# region repo
 
-cd $2
+[[ ! -z $2 ]] && cd $2
 
-if echo $1 | grep -qE "s|c"
+if [[ $1 == *s* || $1 == *c* ]]
 then
-    git rev-parse --is-inside-work-tree &> /dev/null
-
-    if [ $? -ne 0 ]
+    if ! git rev-parse --is-inside-work-tree &> /dev/null
     then
         faulty "Couldn't find a repository in the given directory"
         exit 1
@@ -50,27 +49,23 @@ fi
 # endregion
 # region sync
 
-if echo $1 | grep -q "s"
+if [[ $1 == *s* ]]
 then
     region "Synchronizing repository..."
 
-    git fetch -q
-
-    if [ $? -ne 0 ]
+    if ! git fetch -q
     then
         faulty "Couldn't fetch changes from the remote repository"
         exit 1
     fi
 
-    if [ $(git rev-parse HEAD) == $(git rev-parse FETCH_HEAD) ]
+    if [[ $(git rev-parse HEAD) == $(git rev-parse FETCH_HEAD) ]]
     then
-        echo "No changes have been found in the remote repository"
+        common "No changes have been found in the remote repository"
         exit 0
     fi
 
-    git pull -q
-
-    if [ $? -ne 0 ]
+    if ! git pull -q
     then
         faulty "Couldn't pull changes *clueless*"
         exit 1
@@ -80,7 +75,7 @@ fi
 # endregion
 # region make
 
-if echo $1 | grep -q "i"
+if [[ $1 == *i* ]]
 then
     region "Making a package..."
     makepkg -sicrf
@@ -89,7 +84,7 @@ fi
 # endregion
 # region clean
 
-if echo $1 | grep -q "c"
+if [[ $1 == *c* ]]
 then
     region "Cleaning repository..."
     git clean -df

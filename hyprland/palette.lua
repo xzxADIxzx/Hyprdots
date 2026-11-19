@@ -27,9 +27,10 @@ menu_apps = hl.dsp.exec_raw([[ type="apps" ; ]] .. menu:sub(1, -2) .. [[ -f ]] .
 menu_acts = hl.dsp.exec_raw([[ type="acts" ; ]] .. menu:sub(1, -2) .. [[ -f ]] .. root .. [[/kitty/act ]])
 menu_hist = hl.dsp.exec_raw([[ type="hist" ; ]] .. menu:sub(1, -2) .. [[ -c ]])
 
-term = hl.dsp.exec_raw([[ kitty ]])
-pick = hl.dsp.exec_raw([[ hyprpicker -qraf hex ]])
-lock = hl.dsp.exec_raw([[ loginctl lock-session ]])
+common_term = hl.dsp.exec_raw([[ kitty ]])
+common_pick = hl.dsp.exec_raw([[ hyprpicker -qraf hex ]])
+common_calc = hl.dsp.exec_raw([[ gnome-calculator ]])
+common_lock = hl.dsp.exec_raw([[ loginctl lock-session ]])
 
 format_date = [[ date +"%A, the %-dxx of %B" | sed "s/11xx/11th/; s/12xx/12th/; s/13xx/13th/; s/1xx/1st/; s/2xx/2nd/; s/3xx/3rd/; s/xx/th/" ]]
 format_time = [[ date +"%H:%M" ]]
@@ -75,9 +76,9 @@ brightness_dec = hl.dsp.exec_raw(brightness[monitor].dec)
 brightness_off = hl.dsp.exec_raw(brightness[monitor].off)
 brightness_res = hl.dsp.exec_raw(brightness[monitor].res)
 
-volume_inc = hl.dsp.exec_raw("wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+ --limit 1")
-volume_dec = hl.dsp.exec_raw("wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%- --limit 1")
-volume_tgl = hl.dsp.exec_raw("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle")
+volume_inc = hl.dsp.exec_raw([[ wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+ --limit 1 ]])
+volume_dec = hl.dsp.exec_raw([[ wpctl set-mute @DEFAULT_AUDIO_SINK@ 0 && wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%- --limit 1 ]])
+volume_tgl = hl.dsp.exec_raw([[ wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle ]])
 
 -- endregion
 -- region configs
