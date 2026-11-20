@@ -14,7 +14,7 @@ hl.window_rule
 ({
     match =
     {
-        class = "(?i).*menu-hist.*",
+        class = "(?i).*menu-(hist|calc).*",
     },
     size = "1152 180",
 })

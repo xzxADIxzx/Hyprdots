@@ -18,18 +18,19 @@ processor = "REAPER" -- path to the pipewire node of the processor
 
 local menu =
 [[
+    pkill -x qalc -INT
     pkill -f "^kitty --class menu-$type" && exit 0
     pkill -f "^kitty --class menu"
-    kitty --class menu-$type --config ]] .. root .. [[/kitty/kitty.conf --config ]] .. root .. [[/kitty/search.conf env quiet=1 search
+    kitty --class menu-$type --config ]] .. root .. [[/kitty/kitty.conf --config ]] .. root .. [[/kitty/search.conf env quiet=1
 ]]
 
-menu_apps = hl.dsp.exec_raw([[ type="apps" ; ]] .. menu:sub(1, -2) .. [[ -f ]] .. root .. [[/kitty/app ]])
-menu_acts = hl.dsp.exec_raw([[ type="acts" ; ]] .. menu:sub(1, -2) .. [[ -f ]] .. root .. [[/kitty/act ]])
-menu_hist = hl.dsp.exec_raw([[ type="hist" ; ]] .. menu:sub(1, -2) .. [[ -c ]])
+menu_apps = hl.dsp.exec_raw([[ type="apps" ; ]] .. menu:sub(1, -2) .. [[ search -f ]] .. root .. [[/kitty/app ]])
+menu_acts = hl.dsp.exec_raw([[ type="acts" ; ]] .. menu:sub(1, -2) .. [[ search -f ]] .. root .. [[/kitty/act ]])
+menu_hist = hl.dsp.exec_raw([[ type="hist" ; ]] .. menu:sub(1, -2) .. [[ search -c ]])
+menu_calc = hl.dsp.exec_raw([[ type="calc" ; ]] .. menu:sub(1, -2) .. [[ XDG_CONFIG_HOME=/tmp XDG_STATE_HOME=/tmp qalc -s autocalc -s $'prompt \e[36m >\e[39m' ]])
 
 common_term = hl.dsp.exec_raw([[ kitty ]])
 common_pick = hl.dsp.exec_raw([[ hyprpicker -qraf hex ]])
-common_calc = hl.dsp.exec_raw([[ gnome-calculator ]])
 common_lock = hl.dsp.exec_raw([[ loginctl lock-session ]])
 
 format_date = [[ date +"%A, the %-dxx of %B" | sed "s/11xx/11th/; s/12xx/12th/; s/13xx/13th/; s/1xx/1st/; s/2xx/2nd/; s/3xx/3rd/; s/xx/th/" ]]
